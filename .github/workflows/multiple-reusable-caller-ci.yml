@@ -1,0 +1,29 @@
+name: Call a reusable workflow
+
+on:
+ workflow_dispatch:
+   inputs: 
+     javaci: 
+        type: boolean
+        description: 'deploy javaci'
+        required: true
+     databaseci: 
+        type: boolean
+        description: 'deploy databaseci'
+        required: true        
+ 
+jobs:
+
+    deploy_javaci: 
+       if: ${{github.event.inputs.javaci == 'true'}}
+       uses: Shanridhu/github-actions-shared-workflow/.github/workflows/javaci.yml@main
+       
+       secrets:
+         Workflow2_PAT_TOKEN_GITHUB: ${{ secrets.Workflow2_PAT_TOKEN_GITHUB }}
+
+    deploy_databaseci: 
+       if: ${{github.event.inputs.databaseci == 'true'}}
+       uses: Shanridhu/github-actions-shared-workflow/.github/workflows/databaseci.yml@main
+       
+       secrets:
+         Workflow2_PAT_TOKEN_GITHUB: ${{ secrets.Workflow2_PAT_TOKEN_GITHUB }}
