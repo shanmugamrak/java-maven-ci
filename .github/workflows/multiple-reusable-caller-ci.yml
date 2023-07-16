@@ -4,13 +4,17 @@ on:
  workflow_dispatch:
    inputs: 
      javaci: 
-        type: boolean
+        #type: boolean
+        type: choice
         description: 'deploy javaci'
-        required: true
-     databaseci: 
-        type: boolean
-        description: 'deploy databaseci'
-        required: true        
+        options:
+        - javaci
+        - databaseci
+        #required: true
+     #databaseci: 
+        #type: boolean
+        #description: 'deploy databaseci'
+        #required: true        
  
 jobs:
 
