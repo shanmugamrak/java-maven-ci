@@ -11,4 +11,4 @@ jobs:
        uses: shanmugamrak/reusable-workflow-ci/.github/workflows/javaci.yml@main
       
        secrets:
-         Workflow2_PAT_TOKEN_GITHUB: ${{ secrets.Workflow2_PAT_TOKEN_GITHUB }
+         Workflow2_PAT_TOKEN_GITHUB: ${{ secrets.Workflow2_PAT_TOKEN_GITHUB }}
