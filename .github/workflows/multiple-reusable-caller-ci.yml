@@ -6,7 +6,7 @@ on:
      javaci: 
         type: boolean
         #type: choice
-        description: 'deploy applications'
+        description: 'deploy javaci'
         #options:
         #- javaci
         #- databaseci
