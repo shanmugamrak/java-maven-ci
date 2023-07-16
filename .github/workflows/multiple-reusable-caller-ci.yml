@@ -1,4 +1,4 @@
-name: Call a reusable workflow
+name: caller workflow
 
 on:
  workflow_dispatch:
@@ -6,7 +6,7 @@ on:
      javaci: 
         #type: boolean
         type: choice
-        description: 'deploy javaci'
+        description: 'deploy applications'
         options:
         - javaci
         - databaseci
