@@ -4,29 +4,29 @@ on:
  workflow_dispatch:
    inputs: 
      javaci: 
-        #type: boolean
-        type: choice
+        type: boolean
+        #type: choice
         description: 'deploy applications'
-        options:
-        - javaci
-        - databaseci
+        #options:
+        #- javaci
+        #- databaseci
         required: true
-     #databaseci: 
-        #type: boolean
-        #description: 'deploy databaseci'
-        #required: true        
+     databaseci: 
+        type: boolean
+        description: 'deploy databaseci'
+        required: true        
  
 jobs:
 
     deploy_javaci: 
-       if: ${{github.event.inputs.javaci == 'javaci'}}
+       if: ${{github.event.inputs.javaci == 'true'}}
        uses: shanmugamrak/reusable-workflow-ci/.github/workflows/javaci.yml@main
        
        secrets:
          Workflow2_PAT_TOKEN_GITHUB: ${{ secrets.Workflow2_PAT_TOKEN_GITHUB }}
 
     deploy_databaseci: 
-       if: ${{github.event.inputs.databaseci == 'databaseci'}}
+       if: ${{github.event.inputs.databaseci == 'true'}}
        uses: shanmugamrak/reusable-workflow-ci/.github/workflows/databaseci.yml@main
        
        secrets:
