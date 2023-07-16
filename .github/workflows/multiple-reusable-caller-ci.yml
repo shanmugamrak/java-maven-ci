@@ -1,4 +1,4 @@
-name: caller workflow
+name: multiple-reusable-caller workflow
 
 on:
  workflow_dispatch:
