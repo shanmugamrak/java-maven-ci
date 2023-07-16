@@ -8,7 +8,7 @@ jobs:
 
     trigger_javaci: 
       
-       uses: shanmugamrak/github-reusable-workflow-ci/.github/workflows/javaci.yml@main
+       uses: shanmugamrak/reusable-workflow-ci/.github/workflows/javaci.yml@main
       
        secrets:
          Workflow2_PAT_TOKEN_GITHUB: ${{ secrets.Workflow2_PAT_TOKEN_GITHUB }
