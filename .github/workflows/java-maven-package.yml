@@ -62,12 +62,17 @@ jobs:
       - name: creating folder to publish
         run: mkdir javasonar && cp target/*jar-with-dependencies.jar javasonar
         
-      - name: Publish artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-artifacts
-          path: javasonar
-          if-no-files-found: warn 
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.Workflow2_PAT_TOKEN_GITHUB }}  
+        
+     # - name: Publish artifacts
+      #  uses: actions/upload-artifact@v2
+       # with:
+        #  name: app-artifacts
+         # path: javasonar
+          #if-no-files-found: warn 
            
           
       #- name: Build and analyze
